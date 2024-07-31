@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ManagePassProtectIIA.API",
+    "\\ManagePassProtectIIA.API\\Services"
   ],
+  "SelectedNode": "\\ManagePassProtectIIA.API\\Services\\ProductService.cs",
   "PreviewInSolutionExplorer": false
 }

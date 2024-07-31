@@ -10,39 +10,66 @@ namespace ManagePassProtectIIA.API.Services
     public class ProductService : IProductService
     {
         private readonly AppDbContext _context;
+
         public ProductService(AppDbContext context) 
         {
             _context = context;
         }
-        public async Task<IEnumerable<Product>> GetAllProducts()
+
+        public async Task<ActionResult<ResponseApi>> GetAllProducts()
         {
-            return await _context.Products.Include(p => p.Type).ToListAsync();
+            var responseApi = new ResponseApi
+            {
+                Success = true,
+                Data = await _context.Products.Include(p => p.Type).ToListAsync(),
+                Message = "Liste de Produits récupérée avec succès !"
+            };
+
+            return responseApi; 
         }
 
-        public async Task<ActionResult<Product>> GetOneProduct(int id)
+        public async Task<ActionResult<ResponseApi>> GetOneProduct(int id)
         {
-            var product = await _context.Products.FindAsync(id);
-
-            if (product == null)
+            var responseApi = new ResponseApi
             {
-                return null;
+                Success = true,
+                Data = await _context.Products.FindAsync(id),
+                Message = "Produit récupéré avec succès !"
+            };
+
+            if (responseApi.Data == null)
+            {
+                responseApi.Success = false;
+                responseApi.Data = null;
+                responseApi.Message = "Produit inexistant !";
+
+                return responseApi;
             }
 
-            return product;
+            return responseApi;
         }
 
-        public async Task<ActionResult<Product>> PostOneProduct(Product product)
+        public async Task<ActionResult<ResponseApi>> PostOneProduct(Product product)
         {
             product.Created_at = DateTime.Now;
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
 
-            return product;
+            var responseApi = new ResponseApi
+            {
+                Success = true,
+                Data = null,
+                Message = "Produit créé avec succès !"
+            };
+
+            return responseApi;
         }
 
-        public async Task<ActionResult<Product>> PutOneProduct(int id, Product product)
+        public async Task<ActionResult<ResponseApi>> PutOneProduct(int id, Product product)
         {
             product.Updated_at = DateTime.Now;
+
+            var responseApi = new ResponseApi();
 
             try
             {
@@ -51,17 +78,34 @@ namespace ManagePassProtectIIA.API.Services
                     _context.Entry(product).State = EntityState.Modified;
 
                     await _context.SaveChangesAsync();
+
+                    responseApi = new ResponseApi
+                    {
+                        Success = true,
+                        Data = null,
+                        Message = "Produit modifié avec succès !"
+                    };
                 }
                 else
                 {
-                    return null;
+                    responseApi = new ResponseApi
+                    {
+                        Success = false,
+                        Data = null,
+                        Message = "Erreur de modification du Produit !"
+                    };
                 }
             }
             catch (DbUpdateConcurrencyException)
             {
                 if (!ProductExists(id))
                 {
-                    return null;
+                    responseApi = new ResponseApi
+                    {
+                        Success = false,
+                        Data = null,
+                        Message = "Erreur de modification du Produit !"
+                    };
                 }
                 else
                 {
@@ -69,23 +113,40 @@ namespace ManagePassProtectIIA.API.Services
                 }
             }
 
-            return product;
+            return responseApi;
         }
 
-        public async Task<ActionResult<Product>> DeleteOneProduct(int id)
+        public async Task<ActionResult<ResponseApi>> DeleteOneProduct(int id)
         {
             var product = await _context.Products.FindAsync(id);
 
+            var responseApi = new ResponseApi();
+
             if (product == null)
             {
-                return null;
+                responseApi = new ResponseApi
+                {
+                    Success = false,
+                    Data = null,
+                    Message = "Erreur de suppression du Produit !"
+                };
+            }
+            else
+            {
+                _context.Products.Remove(product);
+                await _context.SaveChangesAsync();
+
+                responseApi = new ResponseApi
+                {
+                    Success = true,
+                    Data = null,
+                    Message = "Produit supprimé avec succès !"
+                };
             }
 
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
-
-            return product;
+            return responseApi;
         }
+
         public bool ProductExists(int id)
         {
             return _context.Products.Any(e => e.Id == id);

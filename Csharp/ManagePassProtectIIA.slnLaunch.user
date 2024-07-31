@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "Nouveau profil",
+    "Projects": [
+      {
+        "Name": "ManagePassProtectIIA.API\\ManagePassProtectIIA.API.csproj",
+        "Action": "Start",
+        "DebugTarget": ""
+      }
+    ]
+  }
+]

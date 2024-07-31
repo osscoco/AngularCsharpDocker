@@ -18,14 +18,14 @@ namespace ManagePassProtectIIA.API.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public async Task<IEnumerable<Product>> GetAllProducts()
+        public async Task<ActionResult<ResponseApi>> GetAllProducts()
         {
             return await _productService.GetAllProducts();
         }
 
         // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        public async Task<ActionResult<ResponseApi>> GetOneProduct(int id)
         {
             return await _productService.GetOneProduct(id);
         }
@@ -33,7 +33,7 @@ namespace ManagePassProtectIIA.API.Controllers
         // POST: api/Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+        public async Task<ActionResult<ResponseApi>> PostOneProduct(Product product)
         {
             return await _productService.PostOneProduct(product);
         }
@@ -41,14 +41,14 @@ namespace ManagePassProtectIIA.API.Controllers
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<ActionResult<Product>> PutProduct(int id, Product product)
+        public async Task<ActionResult<ResponseApi>> PutOneProduct(int id, Product product)
         {
             return await _productService.PutOneProduct(id, product);
         }
 
         // DELETE: api/Products/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Product>> DeleteProduct(int id)
+        public async Task<ActionResult<ResponseApi>> DeleteOneProduct(int id)
         {
             return await _productService.DeleteOneProduct(id);
         }
