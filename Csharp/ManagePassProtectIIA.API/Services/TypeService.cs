@@ -9,39 +9,66 @@ namespace ManagePassProtectIIA.API.Services
     public class TypeService : ITypeService
     {
         private readonly AppDbContext _context;
+
         public TypeService(AppDbContext context)
         {
             _context = context;
         }
-        public async Task<IEnumerable<Models.Type>> GetAllTypes()
+
+        public async Task<ActionResult<ResponseApi>> GetAllTypes()
         {
-            return await _context.Types.ToListAsync();
+            var responseApi = new ResponseApi
+            {
+                Success = true,
+                Data = await _context.Types.ToListAsync(),
+                Message = "Liste de Types récupérée avec succès !"
+            };
+
+            return responseApi;
         }
 
-        public async Task<ActionResult<Models.Type>> GetOneType(int id)
+        public async Task<ActionResult<ResponseApi>> GetOneType(int id)
         {
-            var type = await _context.Types.FindAsync(id);
-
-            if (type == null)
+            var responseApi = new ResponseApi
             {
-                return null;
+                Success = true,
+                Data = await _context.Types.FindAsync(id),
+                Message = "Type récupéré avec succès !"
+            };
+
+            if (responseApi.Data == null)
+            {
+                responseApi.Success = false;
+                responseApi.Data = null;
+                responseApi.Message = "Type inexistant !";
+
+                return responseApi;
             }
 
-            return type;
+            return responseApi;
         }
 
-        public async Task<ActionResult<Models.Type>> PostOneType(Models.Type type)
+        public async Task<ActionResult<ResponseApi>> PostOneType(Models.Type type)
         {
             type.Created_at = DateTime.Now;
             _context.Types.Add(type);
             await _context.SaveChangesAsync();
 
-            return type;
+            var responseApi = new ResponseApi
+            {
+                Success = true,
+                Data = null,
+                Message = "Type créé avec succès !"
+            };
+
+            return responseApi;
         }
 
-        public async Task<ActionResult<Models.Type>> PutOneType(int id, Models.Type type)
+        public async Task<ActionResult<ResponseApi>> PutOneType(int id, Models.Type type)
         {
             type.Updated_at = DateTime.Now;
+
+            var responseApi = new ResponseApi();
 
             try
             {
@@ -50,17 +77,34 @@ namespace ManagePassProtectIIA.API.Services
                     _context.Entry(type).State = EntityState.Modified;
 
                     await _context.SaveChangesAsync();
+
+                    responseApi = new ResponseApi
+                    {
+                        Success = true,
+                        Data = null,
+                        Message = "Type modifié avec succès !"
+                    };
                 }
                 else
                 {
-                    return null;
+                    responseApi = new ResponseApi
+                    {
+                        Success = false,
+                        Data = null,
+                        Message = "Erreur de modification du Type !"
+                    };
                 }
             }
             catch (DbUpdateConcurrencyException)
             {
                 if (!TypeExists(id))
                 {
-                    return null;
+                    responseApi = new ResponseApi
+                    {
+                        Success = false,
+                        Data = null,
+                        Message = "Erreur de modification du Type !"
+                    };
                 }
                 else
                 {
@@ -68,23 +112,40 @@ namespace ManagePassProtectIIA.API.Services
                 }
             }
 
-            return type;
+            return responseApi;
         }
 
-        public async Task<ActionResult<Models.Type>> DeleteOneType(int id)
+        public async Task<ActionResult<ResponseApi>> DeleteOneType(int id)
         {
             var type = await _context.Types.FindAsync(id);
 
+            var responseApi = new ResponseApi();
+
             if (type == null)
             {
-                return null;
+                responseApi = new ResponseApi
+                {
+                    Success = false,
+                    Data = null,
+                    Message = "Erreur de suppression du Type !"
+                };
+            }
+            else
+            {
+                _context.Types.Remove(type);
+                await _context.SaveChangesAsync();
+
+                responseApi = new ResponseApi
+                {
+                    Success = true,
+                    Data = null,
+                    Message = "Type supprimé avec succès !"
+                };
             }
 
-            _context.Types.Remove(type);
-            await _context.SaveChangesAsync();
-
-            return type;
+            return responseApi;
         }
+
         public bool TypeExists(int id)
         {
             return _context.Types.Any(e => e.Id == id);

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ManagePassProtectIIA.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+151ef20e5f6a048acaefacf3f73a7bb2a326c77c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bf539f3a30c6fccfe2cda734bd24863e1b21fdb")]
 [assembly: System.Reflection.AssemblyProductAttribute("ManagePassProtectIIA.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ManagePassProtectIIA.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

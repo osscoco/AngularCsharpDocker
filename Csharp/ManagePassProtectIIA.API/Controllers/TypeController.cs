@@ -18,14 +18,14 @@ namespace ManagePassProtectIIA.API.Controllers
 
         // GET: api/Types
         [HttpGet]
-        public async Task<IEnumerable<Models.Type>> GetAllTypes()
+        public async Task<ActionResult<ResponseApi>> GetAllTypes()
         {
             return await _typeService.GetAllTypes();
         }
 
         // GET: api/Types/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Models.Type>> GetType(int id)
+        public async Task<ActionResult<ResponseApi>> GetOneType(int id)
         {
             return await _typeService.GetOneType(id);
         }
@@ -33,7 +33,7 @@ namespace ManagePassProtectIIA.API.Controllers
         // POST: api/Type
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Models.Type>> PostType(Models.Type type)
+        public async Task<ActionResult<ResponseApi>> PostOneType(Models.Type type)
         {
             return await _typeService.PostOneType(type);
         }
@@ -41,14 +41,14 @@ namespace ManagePassProtectIIA.API.Controllers
         // PUT: api/Type/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<ActionResult<Models.Type>> PutType(int id, Models.Type type)
+        public async Task<ActionResult<ResponseApi>> PutOneType(int id, Models.Type type)
         {
             return await _typeService.PutOneType(id, type);
         }
 
         // DELETE: api/Type/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Models.Type>> DeleteType(int id)
+        public async Task<ActionResult<ResponseApi>> DeleteOneType(int id)
         {
             return await _typeService.DeleteOneType(id);
         }

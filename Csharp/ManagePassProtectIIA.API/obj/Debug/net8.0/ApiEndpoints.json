@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ManagePassProtectIIA.Models.Product, ManagePassProtectIIA.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -21,7 +21,7 @@
   },
   {
     "ContainingType": "ManagePassProtectIIA.API.Controllers.ProductController",
-    "Method": "PostProduct",
+    "Method": "PostOneProduct",
     "RelativePath": "api/Product",
     "HttpMethod": "POST",
     "IsController": true,
@@ -35,7 +35,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ManagePassProtectIIA.Models.Product",
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -47,7 +47,7 @@
   },
   {
     "ContainingType": "ManagePassProtectIIA.API.Controllers.ProductController",
-    "Method": "GetProduct",
+    "Method": "GetOneProduct",
     "RelativePath": "api/Product/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -61,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ManagePassProtectIIA.Models.Product",
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -73,7 +73,7 @@
   },
   {
     "ContainingType": "ManagePassProtectIIA.API.Controllers.ProductController",
-    "Method": "PutProduct",
+    "Method": "PutOneProduct",
     "RelativePath": "api/Product/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -92,7 +92,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ManagePassProtectIIA.Models.Product",
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -104,7 +104,7 @@
   },
   {
     "ContainingType": "ManagePassProtectIIA.API.Controllers.ProductController",
-    "Method": "DeleteProduct",
+    "Method": "DeleteOneProduct",
     "RelativePath": "api/Product/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -118,7 +118,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ManagePassProtectIIA.Models.Product",
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -138,7 +138,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ManagePassProtectIIA.Models.Type, ManagePassProtectIIA.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -150,7 +150,7 @@
   },
   {
     "ContainingType": "ManagePassProtectIIA.API.Controllers.TypeController",
-    "Method": "PostType",
+    "Method": "PostOneType",
     "RelativePath": "api/Type",
     "HttpMethod": "POST",
     "IsController": true,
@@ -164,7 +164,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ManagePassProtectIIA.Models.Type",
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -176,7 +176,7 @@
   },
   {
     "ContainingType": "ManagePassProtectIIA.API.Controllers.TypeController",
-    "Method": "GetType",
+    "Method": "GetOneType",
     "RelativePath": "api/Type/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -190,7 +190,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ManagePassProtectIIA.Models.Type",
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -202,7 +202,7 @@
   },
   {
     "ContainingType": "ManagePassProtectIIA.API.Controllers.TypeController",
-    "Method": "PutType",
+    "Method": "PutOneType",
     "RelativePath": "api/Type/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -221,7 +221,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ManagePassProtectIIA.Models.Type",
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -233,7 +233,7 @@
   },
   {
     "ContainingType": "ManagePassProtectIIA.API.Controllers.TypeController",
-    "Method": "DeleteType",
+    "Method": "DeleteOneType",
     "RelativePath": "api/Type/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -247,7 +247,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ManagePassProtectIIA.Models.Type",
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -259,7 +259,7 @@
   },
   {
     "ContainingType": "ManagePassProtectIIA.API.Controllers.UsersController",
-    "Method": "GetUsers",
+    "Method": "GetAllUsers",
     "RelativePath": "api/Users",
     "HttpMethod": "GET",
     "IsController": true,
@@ -279,9 +279,92 @@
   },
   {
     "ContainingType": "ManagePassProtectIIA.API.Controllers.UsersController",
-    "Method": "GetUser",
+    "Method": "PostOneUser",
+    "RelativePath": "api/Users",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "ManagePassProtectIIA.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.UsersController",
+    "Method": "GetOneUser",
     "RelativePath": "api/Users/{id}",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.UsersController",
+    "Method": "PutOneUser",
+    "RelativePath": "api/Users/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "user",
+        "Type": "ManagePassProtectIIA.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.UsersController",
+    "Method": "DeleteOneUser",
+    "RelativePath": "api/Users/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [

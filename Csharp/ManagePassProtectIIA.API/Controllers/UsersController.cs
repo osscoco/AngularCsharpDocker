@@ -18,16 +18,39 @@ namespace ManagePassProtectIIA.API.Controllers
 
         // GET: api/Users
         [HttpGet]
-        public async Task<ActionResult<ResponseApi>> GetUsers()
+        public async Task<ActionResult<ResponseApi>> GetAllUsers()
         {
             return await _userService.GetAllUsers();
         }
 
         // GET: api/Users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ResponseApi>> GetUser(int id)
+        public async Task<ActionResult<ResponseApi>> GetOneUser(int id)
         {
             return await _userService.GetOneUser(id);
+        }
+
+        // POST: api/Users
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<ResponseApi>> PostOneUser(User user)
+        {
+            return await _userService.PostOneUser(user);
+        }
+
+        // PUT: api/Users/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<ActionResult<ResponseApi>> PutOneUser(int id, User user)
+        {
+            return await _userService.PutOneUser(id, user);
+        }
+
+        // DELETE: api/Users/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ResponseApi>> DeleteOneUser(int id)
+        {
+            return await _userService.DeleteOneUser(id);
         }
     }
 }

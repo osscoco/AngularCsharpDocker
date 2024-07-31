@@ -384,6 +384,7 @@ C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\ne
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\MySqlConnector.dll
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\NuGet.Common.dll
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\NuGet.Configuration.dll
@@ -394,6 +395,7 @@ C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\ne
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\NuGet.ProjectModel.dll
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\NuGet.Versioning.dll
+C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -588,5 +590,3 @@ C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\obj\Debug\ne
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\obj\Debug\net8.0\ManagePassProtectIIA.API.pdb
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\obj\Debug\net8.0\ManagePassProtectIIA.API.genruntimeconfig.cache
 C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\obj\Debug\net8.0\ref\ManagePassProtectIIA.API.dll
-C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\MySqlConnector.dll
-C:\Users\utilisateur\Desktop\Docker\Csharp\ManagePassProtectIIA.API\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
