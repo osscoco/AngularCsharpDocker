@@ -129,6 +129,16 @@
     ]
   },
   {
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.SwaggerController",
+    "Method": "GetSwagger",
+    "RelativePath": "api/Swagger/swagger",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ManagePassProtectIIA.API.Controllers.TypeController",
     "Method": "GetAllTypes",
     "RelativePath": "api/Type",
@@ -258,9 +268,9 @@
     ]
   },
   {
-    "ContainingType": "ManagePassProtectIIA.API.Controllers.UsersController",
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.UserController",
     "Method": "GetAllUsers",
-    "RelativePath": "api/Users",
+    "RelativePath": "api/User",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -278,9 +288,9 @@
     ]
   },
   {
-    "ContainingType": "ManagePassProtectIIA.API.Controllers.UsersController",
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.UserController",
     "Method": "PostOneUser",
-    "RelativePath": "api/Users",
+    "RelativePath": "api/User",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -304,9 +314,9 @@
     ]
   },
   {
-    "ContainingType": "ManagePassProtectIIA.API.Controllers.UsersController",
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.UserController",
     "Method": "GetOneUser",
-    "RelativePath": "api/Users/{id}",
+    "RelativePath": "api/User/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -330,9 +340,9 @@
     ]
   },
   {
-    "ContainingType": "ManagePassProtectIIA.API.Controllers.UsersController",
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.UserController",
     "Method": "PutOneUser",
-    "RelativePath": "api/Users/{id}",
+    "RelativePath": "api/User/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -361,9 +371,9 @@
     ]
   },
   {
-    "ContainingType": "ManagePassProtectIIA.API.Controllers.UsersController",
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.UserController",
     "Method": "DeleteOneUser",
-    "RelativePath": "api/Users/{id}",
+    "RelativePath": "api/User/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
