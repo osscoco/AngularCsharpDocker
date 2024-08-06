@@ -48,22 +48,6 @@ namespace ManagePassProtectIIA.API.Services
             return responseApi;
         }
 
-        public async Task<ActionResult<ResponseApi>> PostOneUser(User user)
-        {
-            user.Created_at = DateTime.Now;
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
-
-            var responseApi = new ResponseApi
-            {
-                Success = true,
-                Data = null,
-                Message = "Utilisateur créé avec succès !"
-            };
-
-            return responseApi;
-        }
-
         public async Task<ActionResult<ResponseApi>> PutOneUser(int id, User user)
         {
             user.Updated_at = DateTime.Now;

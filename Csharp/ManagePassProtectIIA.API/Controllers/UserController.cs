@@ -2,6 +2,7 @@
 using ManagePassProtectIIA.Models;
 using ManagePassProtectIIA.API.Services;
 using ManagePassProtectIIA.API.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ManagePassProtectIIA.API.Controllers
 {
@@ -28,14 +29,6 @@ namespace ManagePassProtectIIA.API.Controllers
         public async Task<ActionResult<ResponseApi>> GetOneUser(int id)
         {
             return await _userService.GetOneUser(id);
-        }
-
-        // POST: api/Users
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<ResponseApi>> PostOneUser(User user)
-        {
-            return await _userService.PostOneUser(user);
         }
 
         // PUT: api/Users/5

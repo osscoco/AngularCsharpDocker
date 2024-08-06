@@ -2,6 +2,7 @@
 using ManagePassProtectIIA.Models;
 using ManagePassProtectIIA.API.Services;
 using ManagePassProtectIIA.API.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ManagePassProtectIIA.API.Controllers
 {
