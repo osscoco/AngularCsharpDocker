@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ManagePassProtectIIA.Models;
-using ManagePassProtectIIA.API.Services;
-using ManagePassProtectIIA.API.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ManagePassProtectIIA.API.Controllers
 {
@@ -9,8 +7,8 @@ namespace ManagePassProtectIIA.API.Controllers
     [ApiController]
     public class SwaggerController : ControllerBase
     {
-        [HttpGet]
-        [Route("swagger")]
+        [AllowAnonymous]
+        [HttpGet("swagger")]
         public IActionResult GetSwagger()
         {
             return Redirect("~/swagger/index.html");

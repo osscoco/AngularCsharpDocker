@@ -1,7 +1,6 @@
 ﻿using ManagePassProtectIIA.API.Interfaces;
 using ManagePassProtectIIA.Models;
 using ManagePassProtectIIA.Persistance;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -51,6 +50,18 @@ namespace ManagePassProtectIIA.API.Services
 
         public async Task<ActionResult<ResponseApi>> PostOneProduct(Product product)
         {
+            var type = await _context.Types.FindAsync(product.TypeId);
+
+            if (type == null)
+            {
+                return new ResponseApi
+                {
+                    Success = false,
+                    Data = null,
+                    Message = "Type Inexistant !"
+                };
+            }
+
             product.Created_at = DateTime.Now;
             _context.Products.Add(product);
             await _context.SaveChangesAsync();

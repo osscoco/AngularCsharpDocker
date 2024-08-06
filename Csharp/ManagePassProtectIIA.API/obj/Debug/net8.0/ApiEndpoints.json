@@ -1,12 +1,54 @@
 [
   {
-    "ContainingType": "ManagePassProtectIIA.API.Controllers.ProductController",
-    "Method": "GetAllProducts",
-    "RelativePath": "api/Product",
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.AuthUserController",
+    "Method": "Login",
+    "RelativePath": "api/AuthUser/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginModel",
+        "Type": "ManagePassProtectIIA.API.Controllers.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.AuthUserController",
+    "Method": "Logout",
+    "RelativePath": "api/AuthUser/logout",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.AuthUserController",
+    "Method": "PostOneUser",
+    "RelativePath": "api/AuthUser/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "ManagePassProtectIIA.Models.User",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "ManagePassProtectIIA.Models.ResponseApi",
@@ -21,18 +63,12 @@
   },
   {
     "ContainingType": "ManagePassProtectIIA.API.Controllers.ProductController",
-    "Method": "PostOneProduct",
+    "Method": "GetAllProducts",
     "RelativePath": "api/Product",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "product",
-        "Type": "ManagePassProtectIIA.Models.Product",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "ManagePassProtectIIA.Models.ResponseApi",
@@ -113,6 +149,32 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ManagePassProtectIIA.Models.ResponseApi",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ManagePassProtectIIA.API.Controllers.ProductController",
+    "Method": "PostOneProduct",
+    "RelativePath": "api/Product/new",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "ManagePassProtectIIA.Models.Product",
         "IsRequired": true
       }
     ],
@@ -275,32 +337,6 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "ManagePassProtectIIA.Models.ResponseApi",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ManagePassProtectIIA.API.Controllers.UserController",
-    "Method": "PostOneUser",
-    "RelativePath": "api/User",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "user",
-        "Type": "ManagePassProtectIIA.Models.User",
-        "IsRequired": true
-      }
-    ],
     "ReturnTypes": [
       {
         "Type": "ManagePassProtectIIA.Models.ResponseApi",

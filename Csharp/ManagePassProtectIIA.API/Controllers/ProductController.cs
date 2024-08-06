@@ -2,6 +2,7 @@
 using ManagePassProtectIIA.Models;
 using ManagePassProtectIIA.API.Services;
 using ManagePassProtectIIA.API.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ManagePassProtectIIA.API.Controllers
 {
@@ -17,6 +18,7 @@ namespace ManagePassProtectIIA.API.Controllers
         }
 
         // GET: api/Products
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<ResponseApi>> GetAllProducts()
         {
@@ -32,7 +34,7 @@ namespace ManagePassProtectIIA.API.Controllers
 
         // POST: api/Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("new")]
         public async Task<ActionResult<ResponseApi>> PostOneProduct(Product product)
         {
             return await _productService.PostOneProduct(product);

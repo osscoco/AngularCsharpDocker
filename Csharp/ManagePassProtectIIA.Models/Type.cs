@@ -9,7 +9,7 @@ namespace ManagePassProtectIIA.Models
         public DateTime Created_at { get; set; } = DateTime.Now;
         public DateTime? Updated_at { get; set; }
         [JsonIgnore]
-        public List<Product>? Products { get; set; }
+        public List<Product>? Products { get; set; } = null!;
         public Type() { }
     }
 }

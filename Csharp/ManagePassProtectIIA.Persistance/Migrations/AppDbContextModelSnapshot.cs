@@ -33,7 +33,7 @@ namespace ManagePassProtectIIA.Persistance.Migrations
                     b.Property<DateTime>("Created_at")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2024, 7, 30, 13, 4, 0, 3, DateTimeKind.Utc).AddTicks(7484));
+                        .HasDefaultValue(new DateTime(2024, 8, 5, 15, 38, 49, 914, DateTimeKind.Utc).AddTicks(697));
 
                     b.Property<string>("Label")
                         .IsRequired()
@@ -64,7 +64,7 @@ namespace ManagePassProtectIIA.Persistance.Migrations
                     b.Property<DateTime>("Created_at")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2024, 7, 30, 13, 4, 0, 3, DateTimeKind.Utc).AddTicks(926));
+                        .HasDefaultValue(new DateTime(2024, 8, 5, 15, 38, 49, 913, DateTimeKind.Utc).AddTicks(9535));
 
                     b.Property<string>("Label")
                         .IsRequired()
@@ -90,7 +90,7 @@ namespace ManagePassProtectIIA.Persistance.Migrations
                     b.Property<DateTime>("Created_at")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2024, 7, 30, 13, 4, 0, 4, DateTimeKind.Utc).AddTicks(2712));
+                        .HasDefaultValue(new DateTime(2024, 8, 5, 15, 38, 49, 914, DateTimeKind.Utc).AddTicks(1553));
 
                     b.Property<string>("Email")
                         .IsRequired()

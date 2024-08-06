@@ -5,7 +5,7 @@
       {
         "Name": "ManagePassProtectIIA.API\\ManagePassProtectIIA.API.csproj",
         "Action": "Start",
-        "DebugTarget": ""
+        "DebugTarget": "http"
       }
     ]
   }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ManagePassProtectIIA.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bf539f3a30c6fccfe2cda734bd24863e1b21fdb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+942de5790c800f22f7aa5e40889d86c7093fa043")]
 [assembly: System.Reflection.AssemblyProductAttribute("ManagePassProtectIIA.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ManagePassProtectIIA.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
